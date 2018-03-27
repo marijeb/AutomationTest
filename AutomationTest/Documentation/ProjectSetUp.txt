@@ -1,5 +1,8 @@
-﻿Set Up Selenium and WEb Drivers
-* install the following Nuget packages via Manage Nuget Packages  for Solution
+﻿Set Up Selenium and Drivers
+* install the following Nuget packages via Manage Nuget Packages for Solution
 	# Selenium.WebDriver
 	# Selenium.Support
 	# Selenium.Chrome.WebDriver // check installed version is compatible with the Chrome version you are using
+
+Application Config File
+* Add new item -> Application Config File
