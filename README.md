@@ -6,7 +6,7 @@
 
 ### Set up ###
 
-* Nuget packages via Manage Nuget Packages for Solution:
+Nuget packages via Manage Nuget Packages for Solution:
 * Selenium.WebDriver
 * Selenium.Support
 * Selenium.Chrome.WebDriver // ensure version is compatible with the Chrome version that is used
@@ -14,5 +14,5 @@
 * MSTest.TestAdapter
 * MSTest.TestFramework
 
-* Add Refence:
+Add Refence:
 * System.Configuration
