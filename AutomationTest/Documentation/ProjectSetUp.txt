@@ -1,8 +1,10 @@
-﻿Set Up Selenium and Drivers
-* install the following Nuget packages via Manage Nuget Packages for Solution
-	# Selenium.WebDriver
-	# Selenium.Support
-	# Selenium.Chrome.WebDriver // check installed version is compatible with the Chrome version you are using
-
-Application Config File
-* Add new item -> Application Config File
+﻿## Set up ##
+	# Nuget packages via Manage Nuget Packages for Solution:
+		* Selenium.WebDriver
+		* Selenium.Support
+		* Selenium.Chrome.WebDriver // ensure version is compatible with the Chrome version that is used
+		* Selenium.WebDriver.IEDriver
+		* MSTest.TestAdapter
+		* MSTest.TestFramework
+	# Add Refence:
+		* System.Configuration
