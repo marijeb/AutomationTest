@@ -2,7 +2,7 @@
 
 ### Synopsis ###
 
-* A sample test automation solution, using Selenium, SpecFlow, MsTest Test Framework 
+* A sample test automation solution using Selenium, SpecFlow, MsTest in C#
 
 ### Set up ###
 
@@ -13,6 +13,3 @@
 * Selenium.WebDriver.IEDriver
 * MSTest.TestAdapter
 * MSTest.TestFramework
-
-#### Add Refence:
-* System.Configuration
