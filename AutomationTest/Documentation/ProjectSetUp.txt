@@ -8,10 +8,11 @@
 		* MSTest.TestFramework
 	# Add Refence:
 		* System.Configuration
+
 ## Framework Structure ##
 * BaseClass: contains classes for starting and stopping the Webdriver
 * Component Helper: contains classes specific to web component
-* Configuration: contains classes for readig data from app.config file
+* Configuration: contains classes for reading data from app.config file
 * ExcelReader: contains classes for reading data from Excel file
 * Interfaces: contains interface for reading data from file
 * PageObject: contains classes specific Page Object Model

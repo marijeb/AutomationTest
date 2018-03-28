@@ -12,6 +12,7 @@ namespace AutomationTest.Interfaces
         BrowserType GetBrowser();
         string GetUsername();
         string GetPassword();
+        string GetWebsite();
 
     }
 }

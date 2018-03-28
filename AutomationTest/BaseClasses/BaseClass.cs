@@ -17,6 +17,24 @@ namespace AutomationTest.BaseClasses
     [TestClass]
     public class BaseClass
     {
+        private static ChromeOptions GetChromeOptions()
+        {
+            ChromeOptions option = new ChromeOptions();
+            option.AddArgument("start-maximized");
+            // opted out of the AddExtension 
+            return option;
+        }
+
+        private static InternetExplorerOptions GetInternetExplorerOptions()
+        {
+            InternetExplorerOptions options = new InternetExplorerOptions
+            {
+                IntroduceInstabilityByIgnoringProtectedModeSettings = false,
+                EnsureCleanSession = false
+            };
+            return options;
+        }
+
         private static IWebDriver GetFireFoxDriver()
         {
             IWebDriver driver = new FirefoxDriver();
@@ -25,14 +43,14 @@ namespace AutomationTest.BaseClasses
 
         private static IWebDriver GetChromeDriver()
         {
-            IWebDriver driver = new ChromeDriver();
+            IWebDriver driver = new ChromeDriver(GetChromeOptions());
             return driver;
 
         }
 
         private static IWebDriver GetIEDriver()
         {
-            IWebDriver driver = new InternetExplorerDriver();
+            IWebDriver driver = new InternetExplorerDriver(GetInternetExplorerOptions());
             return driver;
         }
 
@@ -54,6 +72,17 @@ namespace AutomationTest.BaseClasses
                     break;
                 default:
                     throw new NoSuitableDriverFound("Driver not found : " + ObjectRepository.Config.GetBrowser().ToString());
+            }
+        }
+        [AssemblyCleanup]
+        public static void TearDown()
+        {
+            // some kind knwon issues exist in regards to IE which results in the IE not being closed at the end of test
+            if (ObjectRepository.Driver != null)
+            {
+                ObjectRepository.Driver.Close();
+                ObjectRepository.Driver.Quit();
+                Console.WriteLine("Browser close and Webdriver Quit");
             }
         }
     }

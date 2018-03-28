@@ -24,5 +24,10 @@ namespace AutomationTest.Configuration
         {
             throw new NotImplementedException();
         }
+
+        public string GetWebsite()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

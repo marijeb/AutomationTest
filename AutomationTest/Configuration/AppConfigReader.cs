@@ -26,5 +26,10 @@ namespace AutomationTest.Configuration
         {
             return ConfigurationManager.AppSettings.Get(AppConfigKeys.Username);
         }
+
+        public string GetWebsite()
+        {
+            return ConfigurationManager.AppSettings.Get(AppConfigKeys.Website);
+        }
     }
 }
