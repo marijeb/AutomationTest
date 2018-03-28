@@ -8,3 +8,27 @@
 		* MSTest.TestFramework
 	# Add Refence:
 		* System.Configuration
+## Framework Structure ##
+* BaseClass: contains classes for starting and stopping the Webdriver
+* Component Helper: contains classes specific to web component
+* Configuration: contains classes for readig data from app.config file
+* ExcelReader: contains classes for reading data from Excel file
+* Interfaces: contains interface for reading data from file
+* PageObject: contains classes specific Page Object Model
+* Settings: contains classes for constant key
+* CustomExeception contains classes user define exception
+* TestScript: conatins automtion script
+
+## Configuration File ##
+* App.congig file is suded for storing configuration 
+* To load the configuration "System.Configuration" is used. This is a built utlity of Visual Studio
+* To use it reference "System.Configuration" needs to added to References in the project
+* The class that is in reading the configuraion from "App.config" is "ConfigurationManager"
+* Inside "ConfigurationManager" there is a property "AppSettings"
+* "AppSettings" has a "Get" method which takes "Key" as an srgument and return its "Value"
+* All configuration inside "Aop.config" is of type "string"
+
+## IConfig Interface ##
+* This interface will contain basic method which is required for our framework such "GetBrowser"
+* All the classes which are going to read data from external file system have to implement this interface
+* The reason of enforcing this restriction is there are basic methods which are important for the framework to initialize

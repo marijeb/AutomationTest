@@ -14,10 +14,11 @@ namespace AutomationTest
         [TestMethod]
         public void TestMethod1()
         {
-            IConfig config = new AppConfigReader();
-            Console.WriteLine("Browser : {0}", config.GetBrowser());
-            Console.WriteLine("Username : {0}", config.GetUsername());
-            Console.WriteLine("Password : {0}", config.GetPassword());
+            Console.WriteLine("Test");
+            //IConfig config = new AppConfigReader();
+            //Console.WriteLine("Browser : {0}", config.GetBrowser());
+            //Console.WriteLine("Username : {0}", config.GetUsername());
+            //Console.WriteLine("Password : {0}", config.GetPassword());
         }
 
     }

@@ -14,6 +14,7 @@ using AutomationTest.CustomException;
 
 namespace AutomationTest.BaseClasses
 {
+    [TestClass]
     public class BaseClass
     {
         private static IWebDriver GetFireFoxDriver()
