@@ -56,11 +56,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClasses\BaseClass.cs" />
     <Compile Include="Configuration\AppConfigReader.cs" />
     <Compile Include="Configuration\BrowserType.cs" />
     <Compile Include="Configuration\XmlReader.cs" />
+    <Compile Include="CustomException\NoSuitableDriverFound.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
+    <Compile Include="Settings\ObjectRepository.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,9 +75,7 @@
     <Content Include="Documentation\ProjectSetUp.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BaseClasses\" />
     <Folder Include="ComponentHelper\" />
-    <Folder Include="CustomException\" />
     <Folder Include="ExcelReader\" />
     <Folder Include="PageObject\" />
   </ItemGroup>
