@@ -2,11 +2,6 @@
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AutomationTest.Settings;
 using AutomationTest.Configuration;
@@ -17,6 +12,14 @@ namespace AutomationTest.BaseClasses
     [TestClass]
     public class BaseClass
     {
+        private static FirefoxProfile GetFirefoxptions()
+        {
+            FirefoxProfile profile = new FirefoxProfile();
+            FirefoxProfileManager manager = new FirefoxProfileManager();
+            profile = manager.GetProfile("default");
+            return profile;
+        }
+
         private static ChromeOptions GetChromeOptions()
         {
             ChromeOptions option = new ChromeOptions();
@@ -37,7 +40,7 @@ namespace AutomationTest.BaseClasses
 
         private static IWebDriver GetFireFoxDriver()
         {
-            IWebDriver driver = new FirefoxDriver();
+            FirefoxDriver driver = new FirefoxDriver(GetFirefoxptions());
             return driver;
         }
 
@@ -77,12 +80,11 @@ namespace AutomationTest.BaseClasses
         [AssemblyCleanup]
         public static void TearDown()
         {
-            // some kind knwon issues exist in regards to IE which results in the IE not being closed at the end of test
+            // known issue exist in regards to IE which results in IE not being closed at the end of test
             if (ObjectRepository.Driver != null)
             {
                 ObjectRepository.Driver.Close();
-                ObjectRepository.Driver.Quit();
-                Console.WriteLine("Browser close and Webdriver Quit");
+                ObjectRepository.Driver.Quit();               
             }
         }
     }
