@@ -23,7 +23,7 @@ namespace AutomationTest.BaseClasses
         private static ChromeOptions GetChromeOptions()
         {
             ChromeOptions option = new ChromeOptions();
-            option.AddArgument("start-maximized");
+            //option.AddArgument("start-maximized");
             // opted out of the AddExtension 
             return option;
         }

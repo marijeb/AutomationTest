@@ -57,7 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseClasses\BaseClass.cs" />
+    <Compile Include="ComponentHelper\GenericHelper.cs" />
+    <Compile Include="ComponentHelper\LinkHelper.cs" />
     <Compile Include="ComponentHelper\NavigationHelper.cs" />
+    <Compile Include="ComponentHelper\TextBoxHelper.cs" />
     <Compile Include="ComponentHelper\WindowHelper.cs" />
     <Compile Include="Configuration\AppConfigReader.cs" />
     <Compile Include="Configuration\BrowserType.cs" />
@@ -66,7 +69,10 @@
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
+    <Compile Include="TestScript\Hyperlink\TestHyperLink.cs" />
     <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />
+    <Compile Include="TestScript\TextBox\TestTextBox.cs" />
+    <Compile Include="TestScript\WebElement\TestWebElement.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
