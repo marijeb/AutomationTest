@@ -50,15 +50,25 @@ namespace AutomationTest.ComponentHelper
             GetElement(locator).Click();
         }
 
-        public static bool IsDisplayed(By locator)
+        private static IWebElement element;
+        public static void CheckedCheckBox(By locator)
         {
-            try
+            GetElement(locator).Click();
+
+        }
+
+        public static bool IsChecked(By locator)
+        {
+            element = GetElement(locator);
+            element.Click();
+            string flag = element.GetAttribute("checked");
+
+            if (flag == null)
+                   return false;
+               else 
             {
-                return GetElement(locator).Displayed;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
+                return flag.Equals("true") || flag.Equals("checked");
+
             }
         }
     }

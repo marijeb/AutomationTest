@@ -8,5 +8,7 @@ namespace AutomationTest.ComponentHelper
         {
             return ObjectRepository.Driver.Title;
         }
+
+      
     }
 }
