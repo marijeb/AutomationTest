@@ -18,8 +18,8 @@ namespace AutomationTest.TestScript.Hyperlink
             
             //IWebElement pelement = ObjectRepository.Driver.FindElement(By.PartialLinkText("File"));
             //pelement.Click();
-            LinkHelper.ClickLink(By.LinkText("File a Bug"));
-            LinkHelper.ClickLink(By.PartialLinkText("Bug"));
+            Helper.Click(By.LinkText("File a Bug"));
+            Helper.Click(By.PartialLinkText("Bug"));
 
         }
     }
