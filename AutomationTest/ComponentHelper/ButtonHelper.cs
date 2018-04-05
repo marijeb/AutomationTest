@@ -26,5 +26,6 @@ namespace AutomationTest.ComponentHelper
                     return string.Empty;
             return element.GetAttribute("value");
         }
+
     }
 }

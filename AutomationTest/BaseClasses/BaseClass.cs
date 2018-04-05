@@ -40,7 +40,7 @@ namespace AutomationTest.BaseClasses
 
         private static IWebDriver GetFireFoxDriver()
         {
-            FirefoxDriver driver = new FirefoxDriver(GetFirefoxptions());
+            FirefoxDriver driver = new FirefoxDriver();
             return driver;
         }
 

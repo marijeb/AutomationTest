@@ -8,6 +8,9 @@ namespace AutomationTest.ComponentHelper
 {
     public class Helper
     {
+        private static IWebElement element;
+
+        // Is Element present on Page
         public static bool IsElementPresent(By Locator)
         {
             try
@@ -20,6 +23,7 @@ namespace AutomationTest.ComponentHelper
             }
         }
 
+        // Go to Element
         public static IWebElement GetElement(By Locator)
         {
             if (IsElementPresent(Locator))
@@ -27,36 +31,44 @@ namespace AutomationTest.ComponentHelper
             else
                 throw new NoSuchElementException("Element not Found:" + Locator.ToString());
         }
+
+        // Get page title
         public static string GetTitle()
         {
             return ObjectRepository.Driver.Title;
         }
+
+        // Navigate to URL
         public static void NavigateToUrl(string Url)
         {
             ObjectRepository.Driver.Navigate().GoToUrl(Url);
         }
+
+        //Enter text
         public static void Text(By locator, string text)
         {
             GetElement(locator).SendKeys(text);
         }
 
+        // Clear enter value
         public static void Clear(By locator)
         {
             GetElement(locator).Clear();
         }
 
+        //Click button, link etc
         public static void Click(By locator)
         {
             GetElement(locator).Click();
         }
 
-        private static IWebElement element;
+       
         public static void CheckedCheckBox(By locator)
         {
             GetElement(locator).Click();
 
         }
-
+        // Check if button is selected 
         public static bool IsChecked(By locator)
         {
             element = GetElement(locator);
@@ -71,5 +83,34 @@ namespace AutomationTest.ComponentHelper
 
             }
         }
+
+        // Check if Button is enabled
+        public static bool IsButtonEnabled(By locator)
+        {
+            element = GetElement(locator);
+            return element.Enabled;
+        }
+
+        // This method gets the value of the given attribute of the element
+        public static string GetButtonText(By locator)
+        {
+            element = GetElement(locator);
+            if (element.GetAttribute("value") == null)
+                return string.Empty;
+            return element.GetAttribute("value");
+        }
+
+        // This method will fetch the visible (i.e. not hidden by CSS) innerText of the element
+        public static string GetRadioButtonText(By locator)
+        {
+            element = Helper.GetElement(locator);
+            if (element.Text == null)
+            {
+                return string.Empty;
+            }
+
+            return element.Text;
+        }
     }
+
 }

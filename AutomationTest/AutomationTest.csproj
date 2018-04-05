@@ -76,6 +76,7 @@
     <Compile Include="TestScript\CheckBox\TestCheckBox.cs" />
     <Compile Include="TestScript\Hyperlink\TestHyperLink.cs" />
     <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />
+    <Compile Include="TestScript\RadioButton\HandleRadioButton.cs" />
     <Compile Include="TestScript\TextBox\TestTextBox.cs" />
     <Compile Include="TestScript\WebElement\TestWebElement.cs" />
     <Compile Include="UnitTest1.cs" />
