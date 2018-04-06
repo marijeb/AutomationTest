@@ -6,6 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AutomationTest.Settings;
 using AutomationTest.Configuration;
 using AutomationTest.CustomException;
+using OpenQA.Selenium.PhantomJS;
 
 namespace AutomationTest.BaseClasses
 {
@@ -57,6 +58,30 @@ namespace AutomationTest.BaseClasses
             return driver;
         }
 
+        private static PhantomJSDriver GetPhantomJsDriver()
+        {
+            PhantomJSDriver driver = new PhantomJSDriver(GetPhantomJSDriverService());
+            return driver;
+        }
+
+        private static PhantomJSOptions GetJSOptions()
+        {
+            PhantomJSOptions option = new PhantomJSOptions();
+            option.AddAdditionalCapability("takesScreenshot", false);
+            return option;
+        }
+
+        private static PhantomJSDriverService GetPhantomJSDriverService()
+        {
+            PhantomJSDriverService service = PhantomJSDriverService.CreateDefaultService();
+            service.LogFile = "TestPhantom.log";
+            service.HideCommandPromptWindow = false;
+            return service;
+        }
+
+        
+
+
         [AssemblyInitialize]
         public static void InitWebdriver(TestContext tc)
         {
@@ -73,6 +98,10 @@ namespace AutomationTest.BaseClasses
                 case BrowserType.IExplorer:
                     ObjectRepository.Driver = GetIEDriver();
                     break;
+                case BrowserType.PhantomJs:
+                    ObjectRepository.Driver = GetPhantomJsDriver();
+                    break;
+
                 default:
                     throw new NoSuitableDriverFound("Driver not found : " + ObjectRepository.Config.GetBrowser().ToString());
             }

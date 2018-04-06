@@ -1,6 +1,8 @@
 ﻿using System;
 using AutomationTest.Settings;
 using OpenQA.Selenium;
+using System.IO;
+using OpenQA.Selenium.Support.Extensions;
 
 // merged all the helper classes in 1 helper class
 
@@ -110,6 +112,23 @@ namespace AutomationTest.ComponentHelper
             }
 
             return element.Text;
+        }
+        // This method will take a screenshot and crate a folder if the folder is not present
+        public static void TakeScreenShot(string filename = "Screenshot", string path = @"C:\temp\screenshot\")
+        {
+            // Check if folder temp exist, of not create folder
+            if (!Directory.Exists(@"C:\temp\screenshot\"))
+                Directory.CreateDirectory(@"C:\temp\screenshot\");
+
+            Screenshot ss = ObjectRepository.Driver.TakeScreenshot();
+            if (filename.Equals("Screenshot"))
+            {
+                filename = filename + DateTime.UtcNow.ToString("yyyy-MM-dd-mm-ss") + ".jpeg";
+                ss.SaveAsFile(@path + filename, ScreenshotImageFormat.Jpeg);
+                return;
+            }
+            ss.SaveAsFile(@path + filename, ScreenshotImageFormat.Jpeg);
+
         }
     }
 

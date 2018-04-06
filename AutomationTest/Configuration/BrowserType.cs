@@ -10,6 +10,7 @@ namespace AutomationTest.Configuration
     {
         FireFox,
         Chrome,
-        IExplorer
+        IExplorer,
+        PhantomJs
     }
 }
