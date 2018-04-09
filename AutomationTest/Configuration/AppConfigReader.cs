@@ -31,5 +31,16 @@ namespace AutomationTest.Configuration
         {
             return ConfigurationManager.AppSettings.Get(AppConfigKeys.Website);
         }
+
+        public int GetPageLoadTimeOut()
+        {
+            string timeout =  ConfigurationManager.AppSettings.Get(AppConfigKeys.PageLoadTimeOut);
+            if (timeout == null)
+                return 30;
+            return Convert.ToInt32(timeout);
+
+        }
     }
+
+
 }

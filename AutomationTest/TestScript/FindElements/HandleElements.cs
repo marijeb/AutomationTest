@@ -3,7 +3,6 @@ using OpenQA.Selenium;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AutomationTest.ComponentHelper;
 using AutomationTest.Settings;
-using OpenQA.Selenium.Support.UI;
 using System.Collections.Generic;
 
 namespace AutomationTest.TestScript.FindElements

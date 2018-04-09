@@ -7,6 +7,7 @@ using AutomationTest.Settings;
 using AutomationTest.Configuration;
 using AutomationTest.CustomException;
 using OpenQA.Selenium.PhantomJS;
+using System;
 
 namespace AutomationTest.BaseClasses
 {
@@ -105,6 +106,9 @@ namespace AutomationTest.BaseClasses
                 default:
                     throw new NoSuitableDriverFound("Driver not found : " + ObjectRepository.Config.GetBrowser().ToString());
             }
+            ObjectRepository.Driver.Manage()
+                .Timeouts()
+                .PageLoad = (TimeSpan.FromSeconds(ObjectRepository.Config.GetPageLoadTimeOut()));
         }
         [AssemblyCleanup]
         public static void TearDown()

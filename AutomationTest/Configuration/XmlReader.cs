@@ -25,7 +25,22 @@ namespace AutomationTest.Configuration
             throw new NotImplementedException();
         }
 
+        public string GetPageLoad()
+        {
+            throw new NotImplementedException();
+        }
+
         public string GetWebsite()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetPageLoadTimout()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetPageLoadTimeOut()
         {
             throw new NotImplementedException();
         }
