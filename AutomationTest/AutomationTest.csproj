@@ -76,6 +76,7 @@
     <Compile Include="TestScript\Button\HandleButton.cs" />
     <Compile Include="TestScript\CheckBox\TestCheckBox.cs" />
     <Compile Include="TestScript\DropDown\DropDownList.cs" />
+    <Compile Include="TestScript\FindElements\HandleElements.cs" />
     <Compile Include="TestScript\Hyperlink\TestHyperLink.cs" />
     <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />
     <Compile Include="TestScript\PhantomJS\TestPhantomJS.cs" />
